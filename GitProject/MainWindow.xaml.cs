@@ -29,7 +29,15 @@ namespace GitProject
         {
             if (sender == btnSearch)
             {
-                this.Close();
+                MessageBox.Show("Search ni");
+            }
+            else if (sender == btnRefresh)
+            {
+                MessageBox.Show("Refresh ni");
+            }
+            else if (sender == btnAddStudent)
+            {
+                MessageBox.Show("Add Student ni");
             }
         }
 
