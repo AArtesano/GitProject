@@ -24,5 +24,23 @@ namespace GitProject
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender == btnSearch)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnViewDetail_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnAddGuardian_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

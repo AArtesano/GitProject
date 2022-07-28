@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="EDtronix Database" FontWeight="Bold" FontSize="20" Grid.Row="0" Margin="1"/>
+        <TextBox x:Name="txtSearch" Grid.Row="1" Margin="3"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="2">
+            <Button x:Name="btnSearch" Content="Search" Margin="3" Width="80" Click="Button_Click"/>
+            <Button x:Name="btnAddStudent" Content="Add Student" Margin="3" Width="80" Click="Button_Click"/>
+            <Button x:Name="btnRefresh" Content="Refresh" Margin="3" Width="80" Click="Button_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgDetails" Grid.Row="11" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <Button x:Name="btnViewDetail" Content="View Details" Click="btnViewDetail_Click"/>
+                                <Button x:Name="btnAddGuardian" Content="Add Guardian" Click="btnAddGuardian_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
