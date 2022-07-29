@@ -55,9 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\DB_Controller.cs" />
+    <Compile Include="Controller\Guardian_Controller.cs" />
+    <Compile Include="Controller\Queries_Controller.cs" />
+    <Compile Include="Controller\Student_Controller.cs" />
     <Compile Include="GuardianWindow.xaml.cs">
       <DependentUpon>GuardianWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Guardian_Model.cs" />
+    <Compile Include="Model\Student_Model.cs" />
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
     </Compile>
@@ -115,5 +121,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
