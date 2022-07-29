@@ -55,6 +55,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\DB_Controller.cs" />
+    <Compile Include="Controller\Guardian_Controller.cs" />
+    <Compile Include="Controller\Queries_Controller.cs" />
+    <Compile Include="Controller\Student_Controller.cs" />
+    <Compile Include="GuardianWindow.xaml.cs">
+      <DependentUpon>GuardianWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Guardian_Model.cs" />
+    <Compile Include="Model\Student_Model.cs" />
+    <Compile Include="StudentWindow.xaml.cs">
+      <DependentUpon>StudentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDetails.xaml.cs">
+      <DependentUpon>ViewDetails.xaml</DependentUpon>
+    </Compile>
+    <Page Include="GuardianWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +86,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StudentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -94,5 +121,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

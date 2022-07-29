@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\amera\source\repos\GitProject\GitProject\obj\Debug\
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\
 GitProject
 none
 false
 DEBUG;TRACE
-C:\Users\amera\source\repos\GitProject\GitProject\App.xaml
-1219584333
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\App.xaml
+42066831950
 
-6-502434485
+15-1495987472
 13-1310406943
-MainWindow.xaml;
+GuardianWindow.xaml;MainWindow.xaml;StudentWindow.xaml;ViewDetails.xaml;
 
-True
+False
 
