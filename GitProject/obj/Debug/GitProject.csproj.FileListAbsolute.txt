@@ -14,3 +14,7 @@ C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\GitProject.cspro
 C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\GitProject.csproj.CoreCompileInputs.cache
 C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\GitProject.exe
 C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\GitProject.pdb
+C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\GuardianWindow.g.cs
+C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\StudentWindow.g.cs
+C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\GuardianWindow.baml
+C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\StudentWindow.baml

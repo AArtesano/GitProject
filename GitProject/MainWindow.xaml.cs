@@ -37,7 +37,8 @@ namespace GitProject
             }
             else if (sender == btnAddStudent)
             {
-                MessageBox.Show("Add Student ni");
+                Window form = new StudentWindow();
+                form.ShowDialog();
             }
         }
 
@@ -48,7 +49,8 @@ namespace GitProject
 
         private void btnAddGuardian_Click(object sender, RoutedEventArgs e)
         {
-
+            Window form = new GuardianWindow();
+            form.ShowDialog();
         }
     }
 }
