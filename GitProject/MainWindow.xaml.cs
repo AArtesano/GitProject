@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GitProject.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace GitProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        Student_Controller ctrl_Students = new Student_Controller();
+        Guardian_Controller ctrl_Guardians = new Guardian_Controller();
         public MainWindow()
         {
             InitializeComponent();
@@ -29,28 +32,32 @@ namespace GitProject
         {
             if (sender == btnSearch)
             {
-                MessageBox.Show("Search ni");
+                dgDetails.ItemsSource = ctrl_Students.Search(txtSearch.Text).DefaultView;//SEARCH
             }
             else if (sender == btnRefresh)
             {
-                MessageBox.Show("Refresh ni");
+                dgDetails.ItemsSource = ctrl_Students.Reload_Data().DefaultView;//RELOAD DATA
             }
             else if (sender == btnAddStudent)
             {
                 Window form = new StudentWindow();
                 form.ShowDialog();
+                dgDetails.ItemsSource = ctrl_Students.Reload_Data().DefaultView;//RELOAD DATA
             }
         }
 
         private void btnViewDetail_Click(object sender, RoutedEventArgs e)
         {
-            
+            Window form = new ViewDetails();
+            form.ShowDialog();
+            dgDetails.ItemsSource = ctrl_Students.Reload_Data().DefaultView;//RELOAD DATA
         }
 
         private void btnAddGuardian_Click(object sender, RoutedEventArgs e)
         {
             Window form = new GuardianWindow();
             form.ShowDialog();
+            dgDetails.ItemsSource = ctrl_Students.Reload_Data().DefaultView;//RELOAD DATA
         }
     }
 }
