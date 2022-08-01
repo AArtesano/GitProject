@@ -9,7 +9,7 @@ namespace GitProject.Controller
 {
     public class DB_Controller
     {
-        public static string connectionString = "Data Source=localhost;Initial Catalog=School;User ID=sa;Password=123";
+        public static string connectionString = "Data Source=localhost;Initial Catalog=GitDatabase;User ID=sa;Password=123";
 
         public static SqlConnection GetGlobalConnection()
         {

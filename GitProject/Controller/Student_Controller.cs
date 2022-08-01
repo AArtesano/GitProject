@@ -36,7 +36,7 @@ namespace GitProject.Controller
         public DataTable Reload_Data()
         {
             DataTable dt = new DataTable();
-            cmd = new SqlCommand("SELECT Students.StudentID, Students.Firstname, Students.Middlename, Students.Lastname, CONVERT(char(10), Students.Birthdate, 126) AS Birthdate, COUNT(Guardians.GuardianID) AS 'Number of Guardians' FROM Students LEFT JOIN Guardians ON Students.StudentID = Guardians.StudentID GROUP BY Students.StudentID, Students.Firstname, Students.MiddleIntial, Students.Lastname, Students.Birthdate");
+            cmd = new SqlCommand("SELECT Students.StudentID, Students.Firstname, Students.Middlename, Students.Lastname, CONVERT(char(10), Students.Birthdate, 126) AS Birthdate, COUNT(Guardians.GuardianID) AS 'Number of Guardians' FROM Students LEFT JOIN Guardians ON Students.StudentID = Guardians.StudentID GROUP BY Students.StudentID, Students.Firstname, Students.Middlename, Students.Lastname, Students.Birthdate");
             dt = Queries_Controller.LoadData(cmd);
             return dt;
         }
@@ -53,7 +53,7 @@ namespace GitProject.Controller
             DataTable dt = new DataTable();
             try
             {
-                cmd = new SqlCommand("SELECT StudentID, Firstname, Middlename, Lastname, CONVERT(char(10), Students.Birthdate, 126) AS Birthdate FROM Students WHERE Firstname LIKE '%" + Name + "%' OR MiddleIntial LIKE '%" + Name + "%' OR Lastname LIKE '%" + Name + "%'");
+                cmd = new SqlCommand("SELECT StudentID, Firstname, Middlename, Lastname, CONVERT(char(10), Students.Birthdate, 126) AS Birthdate FROM Students WHERE Firstname LIKE '%" + Name + "%' OR Middlename LIKE '%" + Name + "%' OR Lastname LIKE '%" + Name + "%'");
                 dt = Queries_Controller.LoadData(cmd);
                 return dt;
             }

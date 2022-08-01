@@ -40,6 +40,7 @@ namespace GitProject
 
                 if (ctrl_guardians.Insert(ctrl_guardians, ctrl_Students) == true)
                 {
+                    //MessageBox.Show("Save Successfully!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
                     MessageBox.Show("Saved Successfuly!");
                     this.Close();
                 }
@@ -53,6 +54,7 @@ namespace GitProject
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            //Hindi na butangan message
             if (MessageBox.Show("Cancel?", "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.OK)
             {
                 this.Close();
