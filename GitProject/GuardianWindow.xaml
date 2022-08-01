@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitProject"
         mc:Ignorable="d"
-        Title="Guardian" Height="430" Width="443">
+        Title="GuardianWindow" Height="430" Width="443">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -40,5 +40,6 @@
             <Button x:Name="btnSave" Content="Save" Margin="3" Width="80" Click="btnSave_Click"/>
             <Button x:Name="btnCancel" Content="Cancel" Margin="3" Width="80" Click="btnCancel_Click"/>
         </StackPanel>
+        
     </Grid>
 </Window>

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GitProject.Controller;
 
 namespace GitProject
 {
@@ -19,19 +20,43 @@ namespace GitProject
     /// </summary>
     public partial class GuardianWindow : Window
     {
-        public GuardianWindow()
+        Student_Controller ctrl_Students = new Student_Controller();
+        Guardian_Controller ctrl_guardians = new Guardian_Controller();
+        public GuardianWindow(Student_Controller ctrl_Students)
         {
             InitializeComponent();
+            this.ctrl_Students = ctrl_Students;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Saved");
+            if (sender == btnSave)
+            {
+                ctrl_guardians.Firstname = txtFirstname.Text;
+                ctrl_guardians.Middlename = txtMiddlename.Text;
+                ctrl_guardians.Lastname = txtLastname.Text;
+                ctrl_guardians.Relationship = txtRelationship.Text;
+                ctrl_guardians.Birthdate = Convert.ToDateTime(dtpBirthday.Text);
+
+                if (ctrl_guardians.Insert(ctrl_guardians, ctrl_Students) == true)
+                {
+                    MessageBox.Show("Saved Successfuly!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Unable to save");
+                }
+            }
+
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Cancel?", "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }

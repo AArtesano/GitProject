@@ -20,3 +20,25 @@ C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\GuardianWindow.b
 C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\StudentWindow.baml
 C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\ViewDetails.g.cs
 C:\Users\ACER\Desktop\Try Files\GitProject\GitProject\obj\Debug\ViewDetails.baml
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.csproj.AssemblyReference.cache
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GuardianWindow.g.cs
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\MainWindow.g.cs
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\StudentWindow.g.cs
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\ViewDetails.g.cs
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\App.g.cs
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject_MarkupCompile.cache
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject_MarkupCompile.lref
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.exe
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.pdb
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\bin\Debug\GitProject.exe.config
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\bin\Debug\GitProject.exe
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\bin\Debug\GitProject.pdb
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GuardianWindow.baml
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\MainWindow.baml
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\StudentWindow.baml
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\ViewDetails.baml
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.g.resources
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.Properties.Resources.resources
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.csproj.GenerateResource.cache
+C:\Users\hp\OneDrive\Desktop\GitProject\GitProject\obj\Debug\GitProject.csproj.CoreCompileInputs.cache

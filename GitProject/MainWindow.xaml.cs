@@ -55,7 +55,7 @@ namespace GitProject
 
         private void btnAddGuardian_Click(object sender, RoutedEventArgs e)
         {
-            Window form = new GuardianWindow();
+            Window form = new GuardianWindow(ctrl_Students);
             form.ShowDialog();
             dgDetails.ItemsSource = ctrl_Students.Reload_Data().DefaultView;//RELOAD DATA
         }
