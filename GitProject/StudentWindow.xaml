@@ -32,8 +32,8 @@
         <DatePicker x:Name="dtpBirthday" Grid.Row="7" Margin="3"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="8">
-            <Button x:Name="btnSave" Content="Save" Margin="3" Width="80" Click="btnSave_Click"/>
-            <Button x:Name="btnCancel" Content="Cancel" Margin="3" Width="80" Click="btnCancel_Click"/>
+            <Button x:Name="btnSave" Content="Save" Margin="3" Width="80" Click="Button_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" Margin="3" Width="80" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

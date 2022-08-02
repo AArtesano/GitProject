@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GitProject.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,20 +20,40 @@ namespace GitProject
     /// </summary>
     public partial class StudentWindow : Window
     {
+        Student_Controller ctrl_students = new Student_Controller();
+        Guardian_Controller ctrl_guardians = new Guardian_Controller();
         public StudentWindow()
         {
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Saved Successfully");
-            this.Close();
+            if (sender == btnSave)
+            {
+                ctrl_students.Firstname = txtFirstname.Text;
+                ctrl_students.Middlename = txtMiddlename.Text;
+                ctrl_students.Lastname = txtLastname.Text;
+                ctrl_students.Birthdate = Convert.ToDateTime(dtpBirthday.Text);
+                if (ctrl_students.Insert(ctrl_students) == true)
+                {
+                    MessageBox.Show("Successfully Added!");
+                    this.Close();
+                }
+
+                else
+                    MessageBox.Show("Unable to save!");
+            }
+            else if (sender == btnCancel)
+            {
+
+                if (MessageBox.Show("Are you sure to cancel?", "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    this.Close();
+                }
+            }
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+
     }
 }
