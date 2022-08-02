@@ -68,7 +68,7 @@ namespace GitProject
         {
             DataRowView drv = dgDetails.SelectedItem as DataRowView;
             ctrl_Students.StudentID = Convert.ToInt32(drv.Row["StudentID"].ToString());
-            Window form = new GuardianWindow(ctrl_Students);
+            Window form = new GuardianWindow(ctrl_Students, ctrl_Guardians, true);
             form.ShowDialog();
             dgDetails.ItemsSource = ctrl_Students.Reload_Data().DefaultView;//RELOAD DATA
         }

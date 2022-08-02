@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using GitProject.Controller;
 
 namespace GitProject
@@ -22,10 +11,21 @@ namespace GitProject
     {
         Student_Controller ctrl_Students = new Student_Controller();
         Guardian_Controller ctrl_guardians = new Guardian_Controller();
-        public GuardianWindow(Student_Controller ctrl_Students)
+        Boolean FromMainWindow;
+        public GuardianWindow(Student_Controller ctrl_Students, Guardian_Controller ctrl_guardians, Boolean FromMainWindow)
         {
             InitializeComponent();
             this.ctrl_Students = ctrl_Students;
+            this.ctrl_guardians = ctrl_guardians;
+            this.FromMainWindow = FromMainWindow;
+            if (FromMainWindow == false)
+            {
+                txtFirstname.Text = ctrl_guardians.Firstname;
+                txtMiddlename.Text = ctrl_guardians.Middlename;
+                txtLastname.Text = ctrl_guardians.Lastname;
+                dtpBirthday.Text = ctrl_guardians.Birthdate.ToString();
+                txtRelationship.Text = ctrl_guardians.Relationship;
+            }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -37,25 +37,64 @@ namespace GitProject
                 ctrl_guardians.Lastname = txtLastname.Text;
                 ctrl_guardians.Relationship = txtRelationship.Text;
                 ctrl_guardians.Birthdate = Convert.ToDateTime(dtpBirthday.Text);
+                if (FromMainWindow == true)//Halin sa Main Window
+                {
+                    if (txtFirstname.Text == "" || txtLastname.Text == "" || dtpBirthday.Text == "")
+                    {
+                        MessageBox.Show("Please fill the information box.", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    else
+                    {
+                        ctrl_guardians.Firstname = txtFirstname.Text;
+                        ctrl_guardians.Middlename = txtMiddlename.Text;
+                        ctrl_guardians.Lastname = txtLastname.Text;
+                        ctrl_guardians.Birthdate = Convert.ToDateTime(dtpBirthday.Text);
+                        ctrl_guardians.Relationship = txtRelationship.Text;
 
-                if (ctrl_guardians.Insert(ctrl_guardians, ctrl_Students) == true)
-                {
-                    //MessageBox.Show("Save Successfully!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
-                    MessageBox.Show("Saved Successfuly!");
-                    this.Close();
+                        if (ctrl_guardians.Insert(ctrl_guardians, ctrl_Students) == true)
+                        {
+                            MessageBox.Show("Saved Successfully", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Unable to saved. Please contact the administrator", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
                 }
-                else
+                else//Halin sa View Details
                 {
-                    MessageBox.Show("Unable to save");
+                    if (txtFirstname.Text == "" || txtLastname.Text == "" || txtRelationship.Text == "")
+                    {
+                        MessageBox.Show("Please fill the information box.", "Warning!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("The data will be change. Will you proceed?", "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                        {
+                            ctrl_guardians.Firstname = txtFirstname.Text;
+                            ctrl_guardians.Middlename = txtMiddlename.Text;
+                            ctrl_guardians.Lastname = txtLastname.Text;
+                            ctrl_guardians.Birthdate = Convert.ToDateTime(dtpBirthday.Text);
+                            ctrl_guardians.Relationship = txtRelationship.Text;
+
+                            if (ctrl_guardians.Update(ctrl_guardians) == true)
+                            {
+                                MessageBox.Show("Changed Successfully", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Unable to change. Please contact the administrator", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                        }
+                    }
                 }
             }
-
         }
-
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            //Hindi na butangan message
-            if (MessageBox.Show("Cancel?", "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.OK)
+            if (MessageBox.Show("Are you sure to cancel?", "Warning!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 this.Close();
             }

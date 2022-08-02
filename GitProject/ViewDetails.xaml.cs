@@ -108,25 +108,24 @@ namespace GitProject
                 }
                 else
                 {
-                    MessageBox.Show("Unable to delete", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Unable to remove! Please contact the administrator", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
         private void btnChange_Click(object sender, RoutedEventArgs e)//CHANGE GUARDIAN
         {
-            //DataRowView drv = dgDetails.SelectedItem as DataRowView;
-
-            //ctrl_Guardians.GuardianID = Convert.ToInt32(drv.Row["GuardianID"].ToString());
-            //ctrl_Guardians.Firstname = drv.Row["Firstname"].ToString();
-            //ctrl_Guardians.Middlename = drv.Row["MiddleIntial"].ToString();
-            //ctrl_Guardians.Lastname = drv.Row["Lastname"].ToString();
-            //ctrl_Guardians.Birthdate = Convert.ToDateTime(drv.Row["Birthdate"]);
-            //ctrl_Guardians.Relationship = drv.Row["Relationship"].ToString();
-            //Window form = new GuardianWindow(false, ctrl_Guardians, ctrl_Students);
-            //form.ShowDialog();
-            //dgDetails.ItemsSource = ctrl_Guardians.Reload_Data(ctrl_Students).DefaultView;
+            DataRowView drv = dgDetails.SelectedItem as DataRowView;
+            ctrl_Guardians.GuardianID = Convert.ToInt32(drv.Row["GuardianID"].ToString());
+            ctrl_Guardians.Firstname = drv.Row["Firstname"].ToString();
+            ctrl_Guardians.Middlename = drv.Row["Middlename"].ToString();
+            ctrl_Guardians.Lastname = drv.Row["Lastname"].ToString();
+            ctrl_Guardians.Birthdate = Convert.ToDateTime(drv.Row["Birthdate"]);
+            ctrl_Guardians.Relationship = drv.Row["Relationship"].ToString();
+            Window form = new GuardianWindow(ctrl_Students, ctrl_Guardians, false);
+            form.ShowDialog();
+            dgDetails.ItemsSource = ctrl_Guardians.Reload_Data(ctrl_Students).DefaultView;
         }
-        //////////////////////////////////////// METHODS TO CALL ///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////// METHODS TO CALL ///////////////////////////////////////////////////////////////////////////////////////////////////////
         private void ButtonVisibility(Boolean Save, Boolean Cancel, Boolean Edit, Boolean Firstname, Boolean Middlename, Boolean Lastname, Boolean Birthday, Boolean ClearValue)
         {
             btnSave.IsEnabled = Save;
@@ -136,7 +135,6 @@ namespace GitProject
             txtMiddlename.IsEnabled = Middlename;
             txtLastname.IsEnabled = Lastname;
             dtpBirthday.IsEnabled = Birthday;
-
             if (ClearValue == true)
             {
                 txtFirstname.Clear();
