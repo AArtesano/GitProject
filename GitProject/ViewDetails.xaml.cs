@@ -1,18 +1,8 @@
 ﻿using GitProject.Controller;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GitProject
 {
@@ -27,7 +17,7 @@ namespace GitProject
         {
             InitializeComponent();
             this.ctrl_Students = ctrl_Students;
-            dgDetails.ItemsSource = ctrl_Guardians.Reload_Data(ctrl_Students).DefaultView;
+            dgDetails.ItemsSource = ctrl_Guardians.Reload_Data(ctrl_Students).DefaultView;//Reload Data
             ButtonVisibility(false, false, true, false, false, false, false, false);
             ShowInfo(ctrl_Students.Firstname, ctrl_Students.Middlename, ctrl_Students.Lastname, ctrl_Students.Birthdate);
 
@@ -155,7 +145,7 @@ namespace GitProject
             this.tbAge.Inlines.Add(new Run(" Age: ") { FontWeight = FontWeights.Bold });
             this.tbAge.Inlines.Add(new Run(age.ToString() + " years old") { FontWeight = FontWeights.Regular });
             this.tbBirthday.Inlines.Add(new Run(" Birthday: ") { FontWeight = FontWeights.Bold });
-            this.tbBirthday.Inlines.Add(new Run(Birthday.ToString()) { FontWeight = FontWeights.Regular });
+            this.tbBirthday.Inlines.Add(new Run(Birthday.ToLongDateString()) { FontWeight = FontWeights.Regular });
         }
     }
 }
