@@ -12,7 +12,6 @@
 *.vsidx
 .cache
 .lref
-.suo
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
